@@ -1,0 +1,57 @@
+<html>
+<head>
+<script language="javascript">
+
+function afficher()
+{
+var id=document.forms[0].name1.value;
+var no=document.forms[0].name2.value;
+var ad=document.forms[0].name3.value;
+var pay=document.forms[0].Pays.value;
+if(document.forms[0].cc[0].checked)
+   var payem="Carte Credit";
+if(document.forms[0].cc[1].checked)
+   var payem="Cheque";
+if(document.forms[0].cc[2].checked)
+   var payem="Cash";
+if(document.forms[0].name2.value=='')
+{
+ alert('Nom obligatoire.');
+}
+else
+{
+document.forms[1].tr1.value=' Votre Identifiant est :'+id+'\r\n Votre Nom est :'+no+'\r\n Votre adresse est : '+ad+'\r\n Votre pay est :'+pay+'\r\n Votre adresse est : '+ad+'\r\n Votre payement est :'+payem;
+}
+}
+</script>
+</head>
+<body >
+<table>
+<form>
+<tr><td>Identifiant : </td><td><input type=text name ="name1"  ></td></tr>
+<tr><td>Nom* : </td><td><input type=text name ="name2"  ></td></tr>
+<tr><td>Adresse : </td><td><input type=text name ="name3"  ></td></tr>
+<tr><td>Pays de destination : </td><td><select name="Pays">
+<option value="Maroc">Maroc</option>
+<option value="France">France</option>
+<option value="Algerie">Algerie</option>
+<option value="USA">USA</option>
+<option value="SPAN">SPAN</option>
+<option value="KSA">KSA</option>
+<option value="Canada">Canada</option>
+</select></tr>
+<tr ><td rowspan=3>Votre payement :</td>
+<td><input type=radio  name= "cc" value="Carte Credit">Carte Credit</td></tr>
+<tr><td><input type=radio  name= "cc" value="Cheque">Cheque</td></tr>
+<tr><td><input type=radio  name= "cc" value="Cash">Cash</td>
+</tr>
+<tr><td><input type=button value="Afficher" onclick="afficher();"></td></tr>
+</form>
+</table>
+<form>
+<tr><td> <textarea  rows ="6" cols="80" name="tr1" ></textarea></td></tr>
+</form>
+</body>
+</html>
+
+
